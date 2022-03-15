@@ -31,6 +31,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/',(req, res, next) => {
+    res.status(400).json({
+        message: "bad url"
+    })
+})
 app.use('/auth', authRouter);
 app.use(leaveRouter);
 
